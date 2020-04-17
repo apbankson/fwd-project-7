@@ -5,17 +5,18 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 300;
     padding: 0;
     margin: 0;
-    color: #555555;
-    background-color: #f5f8fa;
+    color: #777;
+    background-color: #ffffff;
 }
 
 .grid-container {
     display: grid;
     grid-template-columns: 100%;
+    /* grid-gap: 10px; */
     grid-template-rows: auto;
     grid-template-areas: 
         "header"
@@ -26,7 +27,7 @@ body {
 /* ======= GRID MEDIA QUERY ======= */
 @media (min-width: 768px) {
     .grid-container {
-        grid-template-columns: 55px 1fr;
+        grid-template-columns: 60px 1fr;
         grid-template-areas: 
             "header header"
             "nav main";
@@ -41,7 +42,9 @@ body {
     }
 
     .traffic, 
-    .social {
+    .social,
+    .dashboard-header,
+    .alert {
         grid-column: 1 / span 2;
     }
 
@@ -71,10 +74,10 @@ body {
 header {
     grid-area: header;
     display: flex;
-    background-color: steelblue;
+    background-color: #7377bf;
     justify-content: space-between;
     align-items: center;
-    padding: 25px 15px;
+    padding: 15px 20px;
     color: #f8f8ff;
 }
 
@@ -83,12 +86,18 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center; 
-    height: 50px;
+    height: 100%;
+    background-color: #4d4c72;
+    padding: 5px 25px;
 }
 
 main {
     display: grid;
     grid-area: main;
+}
+
+section {
+    padding: 20px;
 }
 
 /* === IMAGES === */ 
@@ -127,7 +136,18 @@ div.bell * {
 nav img {
     display: inline-block;
     height: 30px;
-    margin: 20px;
+    width: 30px;
+    margin: 10px;
+}
+
+.alert-banner {
+    display: flex; 
+    background-color: #7377bf;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    color: white;
+    grid-column: 1 / span 2;
 }
 
 /* ======= CHART STYLING ====== */
@@ -136,3 +156,32 @@ nav img {
     width: 95vw;
 }
 
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.headline {
+    border-right: solid 1px #777;
+    padding-right: 10px;
+}
+
+ul.traffic-nav li {
+    display: inline-block;
+    margin-right:
+}
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    margin: 5px 0;
+}
+
+.section-title h3 {
+    text-transform: uppercase;
+
+
+}
