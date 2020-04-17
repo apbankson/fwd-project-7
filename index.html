@@ -7,43 +7,252 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/css-toggle-switch@latest/dist/toggle-switch.css" />
     <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 
-<body>
-    <div class="grid">
-        <header>
-            <h1>Your App &trade;</h1>
-            <div class="bell">
-                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
-                    <style type="text/css">
-                    .st0{fill:#FFFFFF;}
-                    </style>
-                    <g id="_x36__6_">
-                        <g>
-                            <path class="st0" d="M24,18v-8c0-5.5-4.5-10-10-10S4,4.5,4,10v8l-4,8h9.1c0.5,2.3,2.5,4,4.9,4s4.4-1.7,4.9-4H28L24,18z M14,28
-                        c-1.3,0-2.4-0.8-2.8-2h5.6C16.4,27.2,15.3,28,14,28z M3,24l3-6v-8c0-4.4,3.6-8,8-8s8,3.6,8,8v8l3,6H3z"/>
-                        </g>
+<body class="grid-container">
+    <header>
+        <h1><strong>Your</strong> App &trade;</h1>
+
+        <div class="bell">
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+                <style type="text/css">
+                .st0{fill:#FFFFFF;}
+                </style>
+                <g id="_x36__6_">
+                    <g>
+                        <path class="st0" d="M24,18v-8c0-5.5-4.5-10-10-10S4,4.5,4,10v8l-4,8h9.1c0.5,2.3,2.5,4,4.9,4s4.4-1.7,4.9-4H28L24,18z M14,28
+                    c-1.3,0-2.4-0.8-2.8-2h5.6C16.4,27.2,15.3,28,14,28z M3,24l3-6v-8c0-4.4,3.6-8,8-8s8,3.6,8,8v8l3,6H3z"/>
                     </g>
-                </svg>
-            <div id="notifications"></div>
-            </div>
+                </g>
+            </svg>
             <img src="images/member-4.jpg" alt="profile pic" class="profile-pic">
             <h3>Rico Suave</h3>
-        </header>
+        </div>
+    </header>
 
-        <nav>
-            <img src="icons/icon-dashboard.svg" alt="dashboard icon">
-            <img src="icons/icon-members.svg" alt="members icon">
-            <img src="icons/icon-visits.svg" alt="little bar graph">
-            <img src="icons/icon-settings.svg" alt="settings icon">
-        </nav>
-            
-        <main></main>
-    </div>
+    <nav>
+        <a href="#"><img src="icons/icon-dashboard.svg" alt="dashboard icon"></a>
+        <a href="#"><img src="icons/icon-members.svg" alt="members icon"></a>
+        <a href="#"><img src="icons/icon-visits.svg" alt="little bar graph"></a>
+        <a href="#"><img src="icons/icon-settings.svg" alt="settings icon"></a>
+    </nav>
+        
+    <main>
+        <section class="dashboard-header">
+            <h2 class="headline">Dashboard</h2>
 
-    
-<script src="app.js"></script>   
+            <div class="main-header-search">
+                <input type="search" placeholder="Search...">
+            </div>
+        </section>
+
+        <!-- alert banner -->
+        <div class="alert" id="alert">
+             <!-- JS will insert alert here -->
+        </div>
+
+        <section class="traffic">
+            <h3>Traffic</h3>
+            <ul class="traffic-nav">
+                <li class="traffic-nav-link">Hourly</li>
+                <li class="traffic-nav-link">Daily</li>
+                <li class="traffic-nav-link">Weekly</li>
+                <li class="traffic-nav-link">Monthly</li>
+            </ul>
+            <div class="widget-container-full">
+                <!--Element line graph will attach to-->
+                <canvas id="traffic-chart"></canvas>
+            </div>
+        </section>
+
+        <section class="daily">
+            <h3>Daily Traffic</h3>
+            <div class="widget-container-half">
+                <!--Element bar graph will attach to-->
+                <canvas id="daily-chart"></canvas>
+            </div>
+        </section>
+
+        <section class="mobile">
+            <h3>Mobile Users</h3>
+            <div class="widget-container-half">
+                <!--Element doughnut chart will attach to-->
+                <canvas id="mobile-chart"></canvas>
+            </div>
+        </section>
+
+        <section class="social">
+            <h3>Social Stats</h3>
+
+            <div class="social-container">
+                <div class="social-image">
+                    <!--insert SVG here-->
+                </div>
+                <div class="social-text">
+                    <h4>Twitter</h4>
+                    <p>10,345</p>
+                </div>
+            </div>
+
+            <div class="social-container">
+                <div class="social-image">
+                    <!--insert SVG here-->
+                </div>
+                <div class="social-text">
+                    <h4>Facebook</h4>
+                    <p>8,739</p>
+                </div>
+            </div>
+
+            <div class="social-container">
+                <div class="social-image">
+                    <!--insert SVG here-->
+                </div>
+                <div class="social-text">
+                    <h4>Google+</h4>
+                    <p>2,530</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="members">
+            <h3>New Members</h3>
+
+            <div class="member-container">
+                <img src="images/member-1.jpg" alt="member 1" class="profile-pic">
+                <div class="member-text">
+                    <p>Victoria Chambers</p>
+                    <a href="#">victoria.chambers80@example.com</a>
+                </div>
+                <p>10/15/15</p>
+            </div>
+
+            <div class="member-container">
+                <img src="images/member-2.jpg" alt="member 2" class="profile-pic">
+                <div class="member-text">
+                    <p>Dale Byrd</p>
+                    <a href="#">dale.byrd52@example.com</a>
+                </div>
+                <p>10/15/15</p>
+            </div>
+
+            <div class="member-container">
+                <img src="images/member-3.jpg" alt="member 3" class="profile-pic">
+                <div class="member-text">
+                    <p>Dawn Wood</p>
+                    <a href="#">dawn.wood50@example.com</a>
+                </div>
+                <p>10/15/15</p>
+            </div>
+
+            <div class="member-container">
+                <img src="images/member-4.jpg" alt="member 4" class="profile-pic">
+                <div class="member-text">
+                    <p>Dan Oliver</p>
+                    <a href="#">dan.oliver65@example.com</a>
+                </div>
+                <p>10/15/15</p>
+            </div>
+        </section>
+
+        <section class="activity">
+            <h3>Recent Activity</h3>
+
+            <div class="activity-container">
+                <img src="images/member-1.jpg" alt="member 1" class="profile-pic">
+                <div class="activity-text">
+                    <p>Victoria Chambers commented on YourApp's SEO Tips</p>
+                    <p>4 hours ago</p>
+                </div>
+                <p>></p>
+            </div>
+
+            <div class="activity-container">
+                <img src="images/member-2.jpg" alt="member 1" class="profile-pic">
+                <div class="activity-text">
+                    <p>Dale Byrd did something</p>
+                    <p>5 hours ago</p>
+                </div>
+                <p>></p>
+            </div>
+
+            <div class="activity-container">
+                <img src="images/member-3.jpg" alt="member 1" class="profile-pic">
+                <div class="activity-text">
+                    <p>Dawn Wood did something else</p>
+                    <p>5 hours ago</p>
+                </div>
+                <p>></p>
+            </div>
+
+            <div class="activity-container">
+                <img src="images/member-4.jpg" alt="member 1" class="profile-pic">
+                <div class="activity-text">
+                    <p>Dan Oliver does not exist</p>
+                    <p>28 days later</p>
+                </div>
+                <p>></p>
+            </div>
+        </section>
+
+        <section class="message">
+            <h3>Message User</h3>
+
+            <form action="POST" class="widget-container">
+                <input type="text" id="userField" class="form-field" placeholder="Search for user">
+                <textarea placeholder="Message for user" id="messageField" class="form-area"></textarea>
+                <button class="button-primary" id="send">Send</button>
+            </form>
+        </section>
+
+        <section class="settings">
+            <h3>Settings</h3>
+
+            <form action="POST" class="widget-container">
+                <label class="switch-light switch-material" onclick="">
+                    <input type="checkbox">
+                    
+                    <strong>
+                        Send Email Notifications
+                    </strong>
+                    
+                    <span>
+                        <span>Off</span>
+                        <span>On</span>
+                        <a></a>
+                    </span>
+                    </label>
+
+                    <label class="switch-light switch-material" onclick="">
+                    <input type="checkbox">
+                    
+                    <strong>
+                        Set Profile to Public
+                    </strong>
+                    
+                    <span>
+                        <span>Off</span>
+                        <span>On</span>
+                        <a></a>
+                    </span>
+                    </label>
+
+                <select class="form-field" id="timezone">
+                    <option disabled selected>Select a Timezone</option>
+                    <option value="EST">EST</option>
+                    <option value="PST">PST</option>
+                </select>
+
+                <div class="settings-buttons">
+                    <button class="button-primary" id="save">Save</button>
+                    <button class="button-disabled" id="cancel">Cancel</button>
+                </div>
+            </form>
+        </section>
+    </main>  
+    <script src="app.js"></script>   
 </body>
 </html>
